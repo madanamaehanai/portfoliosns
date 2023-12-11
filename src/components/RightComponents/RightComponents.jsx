@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Chatroom from "../Chatroom/Chatroom";
 
 function RightComponents() {
   return (
-    <div className='RightComponents'>RightComponents</div>
-  )
+    <>
+      <div className="RightComponents">RightComponents</div>
+      <Chatroom />
+    </>
+  );
 }
 
-export default RightComponents
+export default RightComponents;
