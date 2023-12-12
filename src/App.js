@@ -4,15 +4,18 @@ import Login from "./pages/login/Login";
 import Jobhunting from "./pages/jobhunting/jobhunting";
 import Learning from "./pages/learning/learning";
 import "./style.css";
+import { useContext } from "react";
+import { AuthContext } from "./state/AuthContext";
 
 function App() {
+  const { user } = useContext(AuthContext);
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/jobhunting" element={<Jobhunting />} />
-        <Route path="/learning" element={<Learning />} />
+        <Route path="/" element={user ? <Home /> : <Login />} />
+        <Route path="/login" element={user ? <Home /> : <Login />} />
+        <Route path="/jobhunting" element={user ? <Jobhunting /> : <Login />} />
+        <Route path="/learning" element={user ? <Learning /> : <Login />} />
       </Routes>
     </Router>
   );

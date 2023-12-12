@@ -5,6 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  flex-direction: column;
+  .Topbar {
+
+  }
 }
 
 .HomeComponents {
@@ -32,7 +37,6 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
-      
     }
     .PostComponents {
       margin: 20px 10%;
