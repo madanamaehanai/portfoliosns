@@ -1,4 +1,4 @@
-import axiosInstance from "./axios";
+import axiosInstance from "../../axios";
 import React, { useEffect, useState } from "react";
 import Post from "../Post/Post";
 
