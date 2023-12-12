@@ -3,7 +3,7 @@ import Topbar from "../../components/Topbar/Topbar";
 // import Posting from "../../components/Posting/Posting";
 import LeftComponents from "../../components/LeftComponents/LeftComponents";
 import RightComponents from "../../components/RightComponents/RightComponents";
-import CenterComponents from "../../components/CenterComponents/CenterComponents";
+// import CenterComponents from "../../components/CenterComponents/CenterComponents";
 
 function Home() {
   return (
@@ -11,7 +11,7 @@ function Home() {
       <Topbar />
       <div className="HomeComponents">
         <LeftComponents />
-        <CenterComponents />
+        {/* <CenterComponents /> */}
         <RightComponents />
       </div>
     </>

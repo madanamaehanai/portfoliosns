@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000/api", // ベースURLを指定
+  baseURL: process.env.REACT_APP_URL, 
 });
 
 export default instance;

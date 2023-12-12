@@ -1,9 +1,9 @@
-import axios from "axios";
+import axiosInstance from "./axios";
 
 export const loginCall = async (user, dispatch) => {
     dispatch({ type: "LOGIN_START" });
     try {
-        const response = await axios.post("auth/login", user);
+        const response = await axiosInstance.post("auth/login", user);
         console.log("成功");
         dispatch({ type: "LOGIN_SUCCESS", payload: response.data });
     } catch (err) {
