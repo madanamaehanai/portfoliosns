@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import Topbar from "../../components/Topbar/Topbar";
+import LeftComponents from "../../components/LeftComponents/LeftComponents";
+import RightComponents from "../../components/RightComponents/RightComponents";
+import JobhuntComponents from "../../components/JobhuntComponents/JobhuntComponents";
 
 function jobhunting() {
   return (
-    <div>jobhunting</div>
-  )
+    <>
+      <Topbar />
+      <div className="HomeComponents">
+        <LeftComponents />
+        <JobhuntComponents />
+        <RightComponents />
+      </div>
+    </>
+  );
 }
 
-export default jobhunting
+export default jobhunting;
