@@ -24,7 +24,7 @@ function Login() {
       <form onSubmit={(e) => handleSubmit(e)}>
         <input type="email" placeholder="Eメール" ref={email} />
         <input type="password" placeholder="パスワード" ref={password} />
-        <button />
+        <button>ログイン</button>
       </form>
     </div>
   );
