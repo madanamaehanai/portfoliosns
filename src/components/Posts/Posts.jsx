@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosInstance from "./axios";
 import React, { useEffect, useState } from "react";
 import Post from "../Post/Post";
 
@@ -8,7 +8,7 @@ function Posts() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(
+        const response = await axiosInstance.get(
           "/post/timeline/65758f3199f189d46a3204a7"
         );
         setPosts(response.data);
