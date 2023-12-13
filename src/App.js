@@ -6,6 +6,7 @@ import Learning from "./pages/learning/learning";
 import "./style.css";
 import { useContext } from "react";
 import { AuthContext } from "./state/AuthContext";
+import Auth from "./pages/auth/Auth";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={user ? <Home /> : <Login />} />
         <Route path="/jobhunting" element={user ? <Jobhunting /> : <Login />} />
         <Route path="/learning" element={user ? <Learning /> : <Login />} />
+        <Route path="/auth" element={user ? <Auth /> : <Login />} />
       </Routes>
     </Router>
   );

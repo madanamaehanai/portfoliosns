@@ -8,11 +8,26 @@ function Chatroom() {
       <Link to="/" className="topbarLink" style={{ textDecoration: "none" }}>
         ホーム
       </Link>
-      <Link to="/jobhunting" className="topbarLink" style={{ textDecoration: "none" }}>
-      就活
+      <Link
+        to="/jobhunting"
+        className="topbarLink"
+        style={{ textDecoration: "none" }}
+      >
+        就活
       </Link>
-      <Link to="/learning" className="topbarLink" style={{ textDecoration: "none" }}>
-      プログラミング学習
+      <Link
+        to="/learning"
+        className="topbarLink"
+        style={{ textDecoration: "none" }}
+      >
+        プログラミング学習
+      </Link>
+      <Link
+        to="/auth"
+        className="topbarLink"
+        style={{ textDecoration: "none" }}
+      >
+        アカウント一覧
       </Link>
     </>
   );
