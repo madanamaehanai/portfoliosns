@@ -7,6 +7,9 @@ function CompanyPost({ post }) {
   return (
     <div className="PostComponents">
       <div className="postText">{post.companyname}</div>
+      <a href={post.url} target="_blank" rel="noopener noreferrer" className="postText">
+        {post.url}
+      </a>
       <div key={post._id}>
         {/* CompanyServicesコンポーネントにpostを渡す */}
         <CompanyService post={post} />
