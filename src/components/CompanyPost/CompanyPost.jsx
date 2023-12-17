@@ -1,9 +1,34 @@
-import axios from "axios";
-import React from "react";
+import axiosInstance from "../../axios";
+import React, { useContext, useState } from "react";
 import CompanyService from "../CompanyServices/CompanyServices";
+import { AuthContext } from "../../state/AuthContext";
 
 function CompanyPost({ post }) {
-  // console.log(post)
+  const { user } = useContext(AuthContext);
+  // console.log(post._id)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const newService = {
+      servicesname: e.target.elements.serviceName.value,
+      servicesurl: e.target.elements.serviceURL.value,
+      userId: user._id,
+      servicesdesc: e.target.elements.description.value,
+      category: e.target.elements.category.value,
+      companyid: post._id,
+    };
+
+    console.log("New Service:", newService);
+
+    try {
+      await axiosInstance.post(`/company/company/services/${post._id}`, newService);
+      window.location.reload();
+      console.log("投稿成功");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div className="PostComponents">
       <div className="postText">{post.companyname}</div>
@@ -18,6 +43,13 @@ function CompanyPost({ post }) {
         ))} */}
       <div className="postText">{post.createdAt}</div>
       </div>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <input type="text" name="serviceName" placeholder="サービス名" />
+        <input type="text" name="serviceURL" placeholder="サービスURL" />
+        <input type="text" name="description" placeholder="概要" />
+        <input type="text" name="category" placeholder="業種" />
+        <button>作成</button>
+      </form>
     </div>
   );
 }
