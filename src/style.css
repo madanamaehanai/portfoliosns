@@ -43,4 +43,15 @@
   flex: 3;
   justify-content: center;
   background-color: rgb(200, 200, 200);
+}
+
+.PostsComponents {
+  margin-top: 20px;
+}
+.PostsComponents .companypost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aqua;
+  margin: 10px 0;
 }/*# sourceMappingURL=style.css.map */

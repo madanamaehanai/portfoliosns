@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 function Post({ post }) {
   const [user, setUser] = useState(() => []);
-console.log(user);
+  // console.log("de-ta", user);
   useEffect(() => {
     async function fetchData() {
       try {

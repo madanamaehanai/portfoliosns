@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axiosInstance from "../../axios";
+import CompanyPost from "../CompanyPost/CompanyPost";
 
 function Inhouse() {
-  const [company, setcompany] = useState(() => []);
-
+  const [company, setCompany] = useState(() => ({ companyPosts: [] }));
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(
+        const response = await axiosInstance.get(
           `/company/company/Inhousedevelopmentcompany`
         );
-        setcompany(response.data);
-        // console.log(company);
+        setCompany(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -20,23 +19,15 @@ function Inhouse() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    console.log(company);
-  }, [company]);
-
   return (
-    <div className="Postcompany">
-      {company.map((item, index) => (
-        <div key={index}>
-          <div className="postText">{item.companyname}</div>
-          <a href={item.url} className="postLink" target="_blank" rel="noopener noreferrer">
-            {item.url}
-          </a>
-          <div className="postText">{item.createdAt}</div>
-        </div>
+    <div className="PostsComponents">
+      {company.companyPosts.map((company) => (
+        <CompanyPost post={company} key={company._id} />
       ))}
     </div>
   );
 }
+// );
+// }
 
 export default Inhouse;
