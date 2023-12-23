@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosInstance from "../../axios";
 import React, { useEffect, useState } from "react";
 
 function Post({ post }) {
@@ -7,7 +7,9 @@ function Post({ post }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(`/user/username/${post.userId}`);
+        const response = await axiosInstance.get(
+          `/user/username/${post.userId}`
+        );
         setUser(response.data);
       } catch (error) {
         console.error(error);

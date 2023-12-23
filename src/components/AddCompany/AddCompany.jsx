@@ -5,6 +5,7 @@ import axiosInstance from "../../axios";
 function AddCompany() {
   const { user } = useContext(AuthContext);
   const [category, setCategory] = useState("");
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
