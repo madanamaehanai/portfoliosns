@@ -4,7 +4,7 @@ import axiosInstance from "../../axios";
 
 function AddCompany() {
   const { user } = useContext(AuthContext);
-  const [category, setCategory] = useState("");
+  const [categories, setCategories] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ function AddCompany() {
       companyname: e.target.elements.companyName.value,
       url: e.target.elements.companyURL.value,
       userId: user._id,
-      category: category,
+      category: categories,
     };
 
     try {
@@ -31,8 +31,15 @@ function AddCompany() {
         <input type="text" name="companyName" placeholder="企業名" />
         <input type="text" name="companyURL" placeholder="企業URL" />
         <input type="text" name="description" placeholder="概要" />
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="">カテゴリーを選択</option>
+        <select
+          multiple // 複数選択可能にする
+          value={categories}
+          onChange={(e) =>
+            setCategories(
+              Array.from(e.target.selectedOptions, (option) => option.value)
+            )
+          }
+        >
           <option value="Inhousedevelopmentcompany">自社開発</option>
           <option value="Contractdevelopmentcompany">受託開発</option>
           <option value="sescompany">SES</option>
