@@ -35,7 +35,14 @@ function Chatroom() {
               >
                 受託開発
               </Link>
-              <p>SES</p>
+              <hr></hr>
+              <Link
+                to="/ses"
+                className="topbarLink"
+                style={{ textDecoration: "none" }}
+              >
+                SES
+              </Link>
             </div>
           </div>
           <div>

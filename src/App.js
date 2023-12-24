@@ -9,6 +9,7 @@ import { AuthContext } from "./state/AuthContext";
 import Auth from "./pages/auth/Auth";
 import Inhousedevelopmentcompany from "./pages/Inhousedevelopmentcompany/Inhousedevelopmentcompany";
 import Contractdevelopmentcompany from "./pages/Contractdevelopmentcompany/Contractdevelopmentcompany";
+import Sescompany from "./pages/Sescompany/Sescompany";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -22,6 +23,7 @@ function App() {
         <Route path="/auth" element={user ? <Auth /> : <Login />} />
         <Route path="/inhouse" element={user ? <Inhousedevelopmentcompany /> : <Login />} />
         <Route path="/outhouse" element={user ? <Contractdevelopmentcompany /> : <Login />} />
+        <Route path="/ses" element={user ? <Sescompany /> : <Login />} />
       </Routes>
     </Router>
   );

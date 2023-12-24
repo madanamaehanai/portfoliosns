@@ -5,7 +5,6 @@ import axiosInstance from "../../axios";
 function AddCompany() {
   const { user } = useContext(AuthContext);
   const [category, setCategory] = useState("");
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,6 +35,7 @@ function AddCompany() {
           <option value="">カテゴリーを選択</option>
           <option value="Inhousedevelopmentcompany">自社開発</option>
           <option value="Contractdevelopmentcompany">受託開発</option>
+          <option value="sescompany">SES</option>
         </select>
         <button>作成</button>
       </form>
