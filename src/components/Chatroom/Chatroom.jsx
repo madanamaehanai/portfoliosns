@@ -18,32 +18,42 @@ function Chatroom() {
         </Link>
         <div>
           <div>
-            <p>会社情報</p>
-            <div>
-              <Link
-                to="/inhouse"
-                className="topbarLink"
-                style={{ textDecoration: "none" }}
-              >
-                自社開発
-              </Link>
-              <hr></hr>
-              <Link
-                to="/outhouse"
-                className="topbarLink"
-                style={{ textDecoration: "none" }}
-              >
-                受託開発
-              </Link>
-              <hr></hr>
-              <Link
-                to="/ses"
-                className="topbarLink"
-                style={{ textDecoration: "none" }}
-              >
-                SES
-              </Link>
-            </div>
+            <details>
+              <summary>
+                <Link
+                  to="/CompanyInfo"
+                  className="topbarLink"
+                  style={{ textDecoration: "none" }}
+                >
+                  会社情報
+                </Link>
+              </summary>
+              <div>
+                <Link
+                  to="/inhouse"
+                  className="topbarLink"
+                  style={{ textDecoration: "none" }}
+                >
+                  自社開発
+                </Link>
+                <hr></hr>
+                <Link
+                  to="/outhouse"
+                  className="topbarLink"
+                  style={{ textDecoration: "none" }}
+                >
+                  受託開発
+                </Link>
+                <hr></hr>
+                <Link
+                  to="/ses"
+                  className="topbarLink"
+                  style={{ textDecoration: "none" }}
+                >
+                  SES
+                </Link>
+              </div>
+            </details>
           </div>
           <div>
             <p>面接対策</p>

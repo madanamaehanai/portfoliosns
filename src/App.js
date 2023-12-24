@@ -7,6 +7,7 @@ import "./style.css";
 import { useContext } from "react";
 import { AuthContext } from "./state/AuthContext";
 import Auth from "./pages/auth/Auth";
+import CompanyInfo from "./pages/CompanyInfo/CompanyInfo";
 import Inhousedevelopmentcompany from "./pages/Inhousedevelopmentcompany/Inhousedevelopmentcompany";
 import Contractdevelopmentcompany from "./pages/Contractdevelopmentcompany/Contractdevelopmentcompany";
 import Sescompany from "./pages/Sescompany/Sescompany";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/jobhunting" element={user ? <Jobhunting /> : <Login />} />
         <Route path="/learning" element={user ? <Learning /> : <Login />} />
         <Route path="/auth" element={user ? <Auth /> : <Login />} />
+        <Route path="/CompanyInfo" element={user ? <CompanyInfo /> : <Login />} />
         <Route path="/inhouse" element={user ? <Inhousedevelopmentcompany /> : <Login />} />
         <Route path="/outhouse" element={user ? <Contractdevelopmentcompany /> : <Login />} />
         <Route path="/ses" element={user ? <Sescompany /> : <Login />} />
