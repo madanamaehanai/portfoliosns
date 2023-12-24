@@ -11,6 +11,7 @@ import CompanyInfo from "./pages/CompanyInfo/CompanyInfo";
 import Inhousedevelopmentcompany from "./pages/Inhousedevelopmentcompany/Inhousedevelopmentcompany";
 import Contractdevelopmentcompany from "./pages/Contractdevelopmentcompany/Contractdevelopmentcompany";
 import Sescompany from "./pages/Sescompany/Sescompany";
+import CompanyRoom from "./pages/CompanyRoom/CompanyRoom";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/inhouse" element={user ? <Inhousedevelopmentcompany /> : <Login />} />
         <Route path="/outhouse" element={user ? <Contractdevelopmentcompany /> : <Login />} />
         <Route path="/ses" element={user ? <Sescompany /> : <Login />} />
+        <Route path="/CompanyRoom" element={user ? <CompanyRoom /> : <Login />} />
       </Routes>
     </Router>
   );
