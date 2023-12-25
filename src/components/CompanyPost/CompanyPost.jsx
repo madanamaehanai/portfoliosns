@@ -2,6 +2,7 @@ import axiosInstance from "../../axios";
 import React, { useContext, useState } from "react";
 import CompanyService from "../CompanyServices/CompanyServices";
 import { AuthContext } from "../../state/AuthContext";
+import { Link } from "react-router-dom";
 
 function CompanyPost({ post }) {
   const { user } = useContext(AuthContext);
@@ -22,7 +23,10 @@ function CompanyPost({ post }) {
     console.log("New Service:", newService);
 
     try {
-      await axiosInstance.post(`/company/company/services/${post._id}`, newService);
+      await axiosInstance.post(
+        `/company/company/services/${post._id}`,
+        newService
+      );
       window.location.reload();
       console.log("投稿成功");
     } catch (err) {
@@ -32,7 +36,12 @@ function CompanyPost({ post }) {
   return (
     <div className="PostComponents">
       <div className="postText">{post.companyname}</div>
-      <a href={post.url} target="_blank" rel="noopener noreferrer" className="postText">
+      <a
+        href={post.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="postText"
+      >
         {post.url}
       </a>
       <div key={post._id}>
@@ -41,7 +50,7 @@ function CompanyPost({ post }) {
         {/* {post.service && post.service.map((service) => (
           <CompanyService post={service} key={service._id} />
         ))} */}
-      <div className="postText">{post.createdAt}</div>
+        <div className="postText">{post.createdAt}</div>
       </div>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input type="text" name="serviceName" placeholder="サービス名" />
@@ -50,6 +59,18 @@ function CompanyPost({ post }) {
         <input type="text" name="category" placeholder="業種" />
         <button>作成</button>
       </form>
+      <button>
+        <Link
+           to={{
+            pathname: "/CompanyRoom",
+            state: { companyId: post._id }
+          }}
+          className="topbarLink"
+          style={{ textDecoration: "none" }}
+        >
+          会社情報へ
+        </Link>
+      </button>
     </div>
   );
 }
