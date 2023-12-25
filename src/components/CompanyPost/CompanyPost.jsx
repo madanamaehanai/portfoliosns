@@ -61,10 +61,7 @@ function CompanyPost({ post }) {
       </form>
       <button>
         <Link
-           to={{
-            pathname: "/CompanyRoom",
-            state: { companyId: post._id }
-          }}
+           to={`/CompanyRoom/${post._id}`}
           className="topbarLink"
           style={{ textDecoration: "none" }}
         >

@@ -2,15 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import axiosInstance from "../../axios";
 import { AuthContext } from "../../state/AuthContext";
 import Post from "../Post/Post";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Company() {
   const { user } = useContext(AuthContext);
   const [company, setCompany] = useState(() => ({ companyPosts: [] }));
   const [posts, setPosts] = useState(() => []);
-  const location = useLocation();
-  const companyId = location.state?.companyId;
-  console.log(location.state);
+  const { companyId } = useParams();
+  console.log("Location State:", companyId);
 
   //会社情報の取得
   useEffect(() => {
@@ -37,7 +36,7 @@ function Company() {
     const newPost = {
       desc: e.target.elements.companyPostdesc.value,
       userId: user._id,
-      companyid: "657ea6ad036d8c2ab10cf592",
+      companyid: `${companyId}`,
     };
 
     try {
@@ -54,7 +53,7 @@ function Company() {
     async function fetchData() {
       try {
         const response = await axiosInstance.get(
-          "/companypost/657ea6ad036d8c2ab10cf592"
+          `/companypost/${companyId}`
         );
         setPosts(response.data);
       } catch (error) {

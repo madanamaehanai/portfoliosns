@@ -27,7 +27,7 @@ function App() {
         <Route path="/inhouse" element={user ? <Inhousedevelopmentcompany /> : <Login />} />
         <Route path="/outhouse" element={user ? <Contractdevelopmentcompany /> : <Login />} />
         <Route path="/ses" element={user ? <Sescompany /> : <Login />} />
-        <Route path="/CompanyRoom" element={user ? <CompanyRoom /> : <Login />} />
+        <Route path="/CompanyRoom/:companyId" element={user ? <CompanyRoom /> : <Login />} />
       </Routes>
     </Router>
   );

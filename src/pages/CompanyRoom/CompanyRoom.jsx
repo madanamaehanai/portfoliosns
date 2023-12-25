@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 function CompanyRoom() {
   const { companyId } = useParams();
-  console.log("Location State:", companyId); 
+  console.log("Location State:", companyId);
   return (
     <>
       <Topbar />
