@@ -56,7 +56,13 @@ function Chatroom() {
             </details>
           </div>
           <div>
-            <p>面接対策</p>
+            <Link
+              to="/preparation"
+              className="topbarLink"
+              style={{ textDecoration: "none" }}
+            >
+              面接対策
+            </Link>
             <div></div>
           </div>
           <div>
