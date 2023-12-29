@@ -9,9 +9,10 @@ function Company() {
   const [company, setCompany] = useState(() => ({ companyPosts: [] }));
   const [posts, setPosts] = useState(() => []);
   const [incomes, setIncomes] = useState(() => []);
+  const [welfare, setWelfare] = useState(() => []);
   const { companyId } = useParams();
-  const [category, setCategory] = useState("");
-  // console.log("Location State:", companyId);
+  const [category, setCategory] = useState("free");
+  // console.log("Location State:", posts);
 
   //会社情報の取得
   useEffect(() => {
@@ -55,7 +56,9 @@ function Company() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axiosInstance.get(`/companypost/${companyId}`);
+        const response = await axiosInstance.get(
+          `/companypost/${companyId}/free`
+        );
         setPosts(response.data);
       } catch (error) {
         console.error(error);
@@ -72,6 +75,21 @@ function Company() {
           `/companypost/${companyId}/income`
         );
         setIncomes(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, []);
+
+  //福利厚生データの取得
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axiosInstance.get(
+          `/companypost/${companyId}/welfare`
+        );
+        setWelfare(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -102,15 +120,29 @@ function Company() {
         </details>
       </div>
       <div>
+        <details>
+          <summary>福利厚生</summary>
+          <div className="PostsComponents">
+            {welfare.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+      </div>
+      <div>
         <div>投稿</div>
         <form onSubmit={(e) => handleSubmit(e)}>
           <input type="text" name="companyPostdesc" placeholder="企業名" />
-          <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="">カテゴリーを選択</option>
-          <option value="income">年収</option>
-          {/* <option value="Contractdevelopmentcompany">受託開発</option> */}
-          {/* <option value="sescompany">SES</option> */}
-        </select>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="">カテゴリーを選択</option>
+            <option value="income">年収</option>
+            <option value="welfare">福利厚生</option>
+            {/* <option value="Contractdevelopmentcompany">受託開発</option> */}
+            {/* <option value="sescompany">SES</option> */}
+          </select>
           <button>作成</button>
         </form>
       </div>
