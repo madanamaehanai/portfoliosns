@@ -10,7 +10,8 @@ function Company() {
   const [posts, setPosts] = useState(() => []);
   const [incomes, setIncomes] = useState(() => []);
   const { companyId } = useParams();
-  console.log("Location State:", companyId);
+  const [category, setCategory] = useState("");
+  // console.log("Location State:", companyId);
 
   //会社情報の取得
   useEffect(() => {
@@ -38,6 +39,7 @@ function Company() {
       desc: e.target.elements.companyPostdesc.value,
       userId: user._id,
       companyid: `${companyId}`,
+      tag: category,
     };
 
     try {
@@ -67,7 +69,7 @@ function Company() {
     async function fetchData() {
       try {
         const response = await axiosInstance.get(
-          `/companypost/${companyId}/test`
+          `/companypost/${companyId}/income`
         );
         setIncomes(response.data);
       } catch (error) {
@@ -103,6 +105,12 @@ function Company() {
         <div>投稿</div>
         <form onSubmit={(e) => handleSubmit(e)}>
           <input type="text" name="companyPostdesc" placeholder="企業名" />
+          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="">カテゴリーを選択</option>
+          <option value="income">年収</option>
+          {/* <option value="Contractdevelopmentcompany">受託開発</option> */}
+          {/* <option value="sescompany">SES</option> */}
+        </select>
           <button>作成</button>
         </form>
       </div>
