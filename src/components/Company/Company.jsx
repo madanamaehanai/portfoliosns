@@ -8,6 +8,7 @@ function Company() {
   const { user } = useContext(AuthContext);
   const [company, setCompany] = useState(() => ({ companyPosts: [] }));
   const [posts, setPosts] = useState(() => []);
+  const [incomes, setIncomes] = useState(() => []);
   const { companyId } = useParams();
   console.log("Location State:", companyId);
 
@@ -52,15 +53,27 @@ function Company() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axiosInstance.get(
-          `/companypost/${companyId}`
-        );
+        const response = await axiosInstance.get(`/companypost/${companyId}`);
         setPosts(response.data);
       } catch (error) {
         console.error(error);
       }
     }
+    fetchData();
+  }, []);
 
+  //年収データの取得
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axiosInstance.get(
+          `/companypost/${companyId}/test`
+        );
+        setIncomes(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
     fetchData();
   }, []);
 
@@ -75,6 +88,16 @@ function Company() {
           <div className="postText">会社概要：{company.desc}</div>
           <div className="postText">使用言語等：{company.language}</div>
         </div>
+      </div>
+      <div>
+        <details>
+          <summary>年収</summary>
+          <div className="PostsComponents">
+            {incomes.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
       </div>
       <div>
         <div>投稿</div>
