@@ -16,6 +16,10 @@ function Preparation() {
   const [typically7, settypically7] = useState(() => []);
   const [typically8, settypically8] = useState(() => []);
   const [typically9, settypically9] = useState(() => []);
+  const [typically10, settypically10] = useState(() => []);
+  const [typically11, settypically11] = useState(() => []);
+  const [typically12, settypically12] = useState(() => []);
+  const [typically13, settypically13] = useState(() => []);
 
   // 投稿データの取得
   const fetchData = async (endpoint, setter) => {
@@ -38,6 +42,10 @@ function Preparation() {
     fetchData("typically7", settypically7);
     fetchData("typically8", settypically8);
     fetchData("typically9", settypically9);
+    fetchData("typically10", settypically10);
+    fetchData("typically11", settypically11);
+    fetchData("typically12", settypically12);
+    fetchData("typically13", settypically13);
     fetchData("engineer1", setengineer1);
   }, []);
 
@@ -73,6 +81,62 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically1.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* 職務経歴を教えてください。 */}
+        <details>
+          <summary>職務経歴を教えてください。</summary>
+          <form onSubmit={(e) => handleSubmit(e, "typically10")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="typically10"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {typically10.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* 前職へ入社した理由は何ですか？ */}
+        <details>
+          <summary>前職へ入社した理由は何ですか？</summary>
+          <form onSubmit={(e) => handleSubmit(e, "typically11")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="typically11"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {typically11.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* 自己PRをお願いします。 */}
+        <details>
+          <summary>自己PRをお願いします。</summary>
+          <form onSubmit={(e) => handleSubmit(e, "typically12")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="typically12"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {typically12.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* 会社選びの軸があれば教えてください */}
+        <details>
+          <summary>会社選びの軸があれば教えてください</summary>
+          <form onSubmit={(e) => handleSubmit(e, "typically13")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="typically13"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {typically13.map((post) => (
               <Post post={post} key={post._id} />
             ))}
           </div>
@@ -178,6 +242,7 @@ function Preparation() {
           </div>
         </details>
         {/* 最後に何か質問はありますか？ */}
+
         <details>
           <summary>最後に何か質問はありますか？</summary>
           <form onSubmit={(e) => handleSubmit(e, "typically9")}>
