@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 
 function Preparation() {
   const { user } = useContext(AuthContext);
-  const [engineer1, setengineer1] = useState(() => []);
   const [typically1, settypically1] = useState(() => []);
   const [typically2, settypically2] = useState(() => []);
   const [typically3, settypically3] = useState(() => []);
@@ -20,6 +19,14 @@ function Preparation() {
   const [typically11, settypically11] = useState(() => []);
   const [typically12, settypically12] = useState(() => []);
   const [typically13, settypically13] = useState(() => []);
+  const [typically14, settypically14] = useState(() => []);
+  const [engineer1, setengineer1] = useState(() => []);
+  const [engineer2, setengineer2] = useState(() => []);
+  const [engineer3, setengineer3] = useState(() => []);
+  const [engineer4, setengineer4] = useState(() => []);
+  const [engineer5, setengineer5] = useState(() => []);
+  const [engineer6, setengineer6] = useState(() => []);
+  const [engineer7, setengineer7] = useState(() => []);
 
   // 投稿データの取得
   const fetchData = async (endpoint, setter) => {
@@ -46,7 +53,14 @@ function Preparation() {
     fetchData("typically11", settypically11);
     fetchData("typically12", settypically12);
     fetchData("typically13", settypically13);
+    fetchData("typically14", settypically14);
     fetchData("engineer1", setengineer1);
+    fetchData("engineer2", setengineer2);
+    fetchData("engineer3", setengineer3);
+    fetchData("engineer4", setengineer4);
+    fetchData("engineer5", setengineer5);
+    fetchData("engineer6", setengineer6);
+    fetchData("engineer7", setengineer7);
   }, []);
 
   // 投稿
@@ -95,6 +109,20 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically10.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* 前職での得意な業務は何ですか？ */}
+        <details>
+          <summary>前職での得意な業務は何ですか？</summary>
+          <form onSubmit={(e) => handleSubmit(e, "typically14")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="typically14"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {typically14.map((post) => (
               <Post post={post} key={post._id} />
             ))}
           </div>
@@ -242,7 +270,6 @@ function Preparation() {
           </div>
         </details>
         {/* 最後に何か質問はありますか？ */}
-
         <details>
           <summary>最後に何か質問はありますか？</summary>
           <form onSubmit={(e) => handleSubmit(e, "typically9")}>
@@ -259,6 +286,7 @@ function Preparation() {
       </details>
       <details>
         <summary>エンジニア系質疑</summary>
+        {/* エンジニアを目指した理由は？ */}
         <details>
           <summary>エンジニアを目指した理由は？</summary>
           <form onSubmit={(e) => handleSubmit(e, "engineer1")}>
@@ -268,6 +296,90 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer1.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* 使用したことのある技術やツールを教えてください */}
+        <details>
+          <summary>使用したことのある技術やツールを教えてください</summary>
+          <form onSubmit={(e) => handleSubmit(e, "engineer2")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="engineer2"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {engineer2.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* その技術やツールを選んだ理由は何ですか？ */}
+        <details>
+          <summary>その技術やツールを選んだ理由は何ですか？</summary>
+          <form onSubmit={(e) => handleSubmit(e, "engineer3")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="engineer3"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {engineer3.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* これまでどのようなサービスを開発してきましたか？ */}
+        <details>
+          <summary>これまでどのようなサービスを開発してきましたか？</summary>
+          <form onSubmit={(e) => handleSubmit(e, "engineer4")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="engineer4"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {engineer4.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* 開発において重要視していることは何ですか？ */}
+        <details>
+          <summary>開発において重要視していることは何ですか？</summary>
+          <form onSubmit={(e) => handleSubmit(e, "engineer5")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="engineer5"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {engineer5.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* 担当していたサービスの規模はどのくらいですか？ */}
+        <details>
+          <summary>担当していたサービスの規模はどのくらいですか？</summary>
+          <form onSubmit={(e) => handleSubmit(e, "engineer6")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="engineer6"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {engineer6.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* リーダー経験はありますか？ */}
+        <details>
+          <summary>リーダー経験はありますか？</summary>
+          <form onSubmit={(e) => handleSubmit(e, "engineer7")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="engineer7"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {engineer7.map((post) => (
               <Post post={post} key={post._id} />
             ))}
           </div>
