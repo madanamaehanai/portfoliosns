@@ -11,6 +11,7 @@ function Company() {
   const [incomes, setIncomes] = useState(() => []);
   const [welfare, setWelfare] = useState(() => []);
   const [thegoal, setthegoal] = useState(() => []);
+  const [reasonforapplying, setreasonforapplying] = useState(() => []);
   const { companyId } = useParams();
   const [category, setCategory] = useState("free");
   // console.log("Location State:", posts);
@@ -113,6 +114,21 @@ function Company() {
     fetchData();
   }, []);
 
+  //志望動機データの取得
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axiosInstance.get(
+          `/companypost/${companyId}/reasonforapplying`
+        );
+        setreasonforapplying(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="Company">
       <p>Company</p>
@@ -147,6 +163,16 @@ function Company() {
       </div>
       <div>
         <details>
+          <summary>志望動機</summary>
+          <div className="PostsComponents">
+            {reasonforapplying.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+      </div>
+      <div>
+        <details>
           <summary>入社後の目標</summary>
           <div className="PostsComponents">
             {thegoal.map((post) => (
@@ -167,8 +193,7 @@ function Company() {
             <option value="income">年収</option>
             <option value="welfare">福利厚生</option>
             <option value="thegoal">入社後の目標</option>
-            {/* <option value="Contractdevelopmentcompany">受託開発</option> */}
-            {/* <option value="sescompany">SES</option> */}
+            <option value="reasonforapplying">志望理由</option>
           </select>
           <button>作成</button>
         </form>
