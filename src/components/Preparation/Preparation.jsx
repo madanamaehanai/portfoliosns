@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 
 function Preparation() {
   const { user } = useContext(AuthContext);
+  const [free, setfree] = useState(() => []);
   const [typically1, settypically1] = useState(() => []);
   const [typically2, settypically2] = useState(() => []);
   const [typically3, settypically3] = useState(() => []);
@@ -58,6 +59,7 @@ function Preparation() {
 
   // エンドポイントの変数
   useEffect(() => {
+    fetchData("free", setfree);
     fetchData("typically1", settypically1);
     fetchData("typically2", settypically2);
     fetchData("typically3", settypically3);
@@ -523,6 +525,18 @@ function Preparation() {
               <Post post={post} key={post._id} />
             ))}
           </div>
+          <details>
+            <summary>ヒント</summary>
+            <div>
+              <p>何故、エンジニアになりたいと思ったのか前向きな理由</p>
+              <p>
+                他業種に比べ、自己学習が必要な業種で、新たな技術や知識を吸収できる人間なのか
+              </p>
+              <p>
+                なりたいと思った理由が、持続可能な理由か、持続性が薄い理由なのか、業界と人間性のマッチング確認
+              </p>
+            </div>
+          </details>
         </details>
         {/* 使用したことのある技術やツールを教えてください */}
         <details>
@@ -679,6 +693,22 @@ function Preparation() {
           </div>
         </details>
       </details>
+      <details>
+        <summary>逆質問</summary>
+      </details>
+      <div>
+        <p>フリールーム</p>
+        <form onSubmit={(e) => handleSubmit(e, "free")}>
+          <input type="text" name="companyPostdesc" placeholder="回答内容" />
+          <input type="hidden" name="category" value="free"></input>
+          <button>投稿</button>
+        </form>
+        <div className="PostsComponents">
+          {free.map((post) => (
+            <Post post={post} key={post._id} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
