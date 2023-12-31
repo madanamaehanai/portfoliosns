@@ -11,6 +11,8 @@ function Company() {
   const [incomes, setIncomes] = useState(() => []);
   const [welfare, setWelfare] = useState(() => []);
   const [thegoal, setthegoal] = useState(() => []);
+  const [improvement, setimprovement] = useState(() => []);
+  const [whatdoyouthink, setwhatdoyouthink] = useState(() => []);
   const [reasonforapplying, setreasonforapplying] = useState(() => []);
   const { companyId } = useParams();
   const [category, setCategory] = useState("free");
@@ -129,6 +131,36 @@ function Company() {
     fetchData();
   }, []);
 
+  //志望動機データの取得
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axiosInstance.get(
+          `/companypost/${companyId}/whatdoyouthink`
+        );
+        setwhatdoyouthink(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, []);
+
+  //志望動機データの取得
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axiosInstance.get(
+          `/companypost/${companyId}/improvement`
+        );
+        setimprovement(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="Company">
       <p>Company</p>
@@ -182,6 +214,26 @@ function Company() {
         </details>
       </div>
       <div>
+        <details>
+          <summary>当社サービスの改善点を教えてください。</summary>
+          <div className="PostsComponents">
+            {improvement.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>当社サービスをどう思いますか？</summary>
+          <div className="PostsComponents">
+            {whatdoyouthink.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+      </div>
+      <div>
         <div>投稿</div>
         <form onSubmit={(e) => handleSubmit(e)}>
           <input type="text" name="companyPostdesc" placeholder="企業名" />
@@ -194,6 +246,8 @@ function Company() {
             <option value="welfare">福利厚生</option>
             <option value="thegoal">入社後の目標</option>
             <option value="reasonforapplying">志望理由</option>
+            <option value="improvement">サービス改善点</option>
+            <option value="whatdoyouthink">当社サービスをどう思うか</option>
           </select>
           <button>作成</button>
         </form>
