@@ -5,6 +5,7 @@ import Post from "../Post/Post";
 
 function LearnComponents() {
   const { user } = useContext(AuthContext);
+  const [free, setfree] = useState(() => []);
   const [react, setreact] = useState(() => []);
 
   const fetchData = async (endpoint, setter) => {
@@ -17,6 +18,7 @@ function LearnComponents() {
   };
 
   useEffect(() => {
+    fetchData("free", setfree);
     fetchData("react", setreact);
   }, []);
 
@@ -79,12 +81,12 @@ function LearnComponents() {
               />
               <input type="hidden" name="category" value="react"></input>
               <button>投稿</button>
+            </form>
               <div className="PostsComponents">
                 {react.map((post) => (
                   <Post post={post} key={post._id} />
                 ))}
               </div>
-            </form>
           </details>
           <details>
             <summary>React Native</summary>
@@ -94,6 +96,20 @@ function LearnComponents() {
           </details>
         </details>
       </details>
+      <form onSubmit={(e) => handleSubmit(e, "free")}>
+              <input
+                type="text"
+                name="companyPostdesc"
+                placeholder="回答内容"
+              />
+              <input type="hidden" name="category" value="free"></input>
+              <button>投稿</button>
+            </form>
+              <div className="PostsComponents">
+                {free.map((post) => (
+                  <Post post={post} key={post._id} />
+                ))}
+              </div>
     </div>
   );
 }
