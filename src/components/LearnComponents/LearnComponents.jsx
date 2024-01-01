@@ -1,6 +1,41 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import axiosInstance from "../../axios";
+import { AuthContext } from "../../state/AuthContext";
 
 function LearnComponents() {
+  const { user } = useContext(AuthContext);
+  const [react, setreact] = useState(() => []);
+
+  const fetchData = async (endpoint, setter) => {
+    try {
+      const response = await axiosInstance.get(`/preparation/${endpoint}`);
+      setter(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData("react", setreact);
+  }, []);
+
+  // 投稿
+  const handleSubmit = async (e, category) => {
+    e.preventDefault();
+    const newPost = {
+      desc: e.target.elements.companyPostdesc.value,
+      userId: user._id,
+      category: category,
+    };
+    try {
+      await axiosInstance.post("/preparation", newPost);
+      window.location.reload();
+      // console.log("投稿成功");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="CenterComponents">
       <div>LearnComponents</div>
@@ -35,6 +70,15 @@ function LearnComponents() {
               Reactのメリット3 仮想ＤＯＭ採用の為、処理が高速
               仮想DOMの為、Web描画時等に変更箇所のみ反映されるので、ページ全体を再描画するよりも局所的な処理で済むため、処理が高速
             </p>
+            <form onSubmit={(e) => handleSubmit(e, "engineer2")}>
+              <input
+                type="text"
+                name="companyPostdesc"
+                placeholder="回答内容"
+              />
+              <input type="hidden" name="category" value="react"></input>
+              <button>投稿</button>
+            </form>
           </details>
           <details>
             <summary>React Native</summary>
