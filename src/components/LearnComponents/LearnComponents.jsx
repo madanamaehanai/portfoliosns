@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import axiosInstance from "../../axios";
 import { AuthContext } from "../../state/AuthContext";
+import Post from "../Post/Post";
 
 function LearnComponents() {
   const { user } = useContext(AuthContext);
@@ -8,7 +9,7 @@ function LearnComponents() {
 
   const fetchData = async (endpoint, setter) => {
     try {
-      const response = await axiosInstance.get(`/preparation/${endpoint}`);
+      const response = await axiosInstance.get(`/learn/${endpoint}`);
       setter(response.data);
     } catch (error) {
       console.error(error);
@@ -28,7 +29,7 @@ function LearnComponents() {
       category: category,
     };
     try {
-      await axiosInstance.post("/preparation", newPost);
+      await axiosInstance.post("/learn", newPost);
       window.location.reload();
       // console.log("投稿成功");
     } catch (err) {
@@ -70,7 +71,7 @@ function LearnComponents() {
               Reactのメリット3 仮想ＤＯＭ採用の為、処理が高速
               仮想DOMの為、Web描画時等に変更箇所のみ反映されるので、ページ全体を再描画するよりも局所的な処理で済むため、処理が高速
             </p>
-            <form onSubmit={(e) => handleSubmit(e, "engineer2")}>
+            <form onSubmit={(e) => handleSubmit(e, "react")}>
               <input
                 type="text"
                 name="companyPostdesc"
@@ -78,6 +79,11 @@ function LearnComponents() {
               />
               <input type="hidden" name="category" value="react"></input>
               <button>投稿</button>
+              <div className="PostsComponents">
+                {react.map((post) => (
+                  <Post post={post} key={post._id} />
+                ))}
+              </div>
             </form>
           </details>
           <details>
