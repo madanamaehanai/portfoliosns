@@ -171,6 +171,10 @@ function Company() {
           <div className="postText">会社URL：{company.url}</div>
           <div className="postText">会社概要：{company.desc}</div>
           <div className="postText">使用言語等：{company.language}</div>
+          <div className="postText">従業員数：#####</div>
+          <div className="postText">年収：#####</div>
+          <div className="postText">経営理念：#####</div>
+          <div className="postText">資本金：#####</div>
         </div>
       </div>
       <div>

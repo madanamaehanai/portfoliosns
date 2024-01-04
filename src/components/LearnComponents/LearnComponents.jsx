@@ -82,11 +82,11 @@ function LearnComponents() {
               <input type="hidden" name="category" value="react"></input>
               <button>投稿</button>
             </form>
-              <div className="PostsComponents">
-                {react.map((post) => (
-                  <Post post={post} key={post._id} />
-                ))}
-              </div>
+            <div className="PostsComponents">
+              {react.map((post) => (
+                <Post post={post} key={post._id} />
+              ))}
+            </div>
           </details>
           <details>
             <summary>React Native</summary>
@@ -96,20 +96,43 @@ function LearnComponents() {
           </details>
         </details>
       </details>
+      <details>
+        <summary>Python</summary>
+        <details>
+          <summary>django</summary>
+        </details>
+        <details>
+          <summary>Flask</summary>
+        </details>
+        <details>
+          <summary>FlaskAPI</summary>
+        </details>
+        <details>
+          <summary>Dash</summary>
+        </details>
+        <details>
+          <summary>Stramlit</summary>
+        </details>
+      </details>
+      <details>
+        <summary>資格</summary>
+        <details>
+          <summary>ITパスポート</summary>
+        </details>
+        <details>
+          <summary>基本情報技術者</summary>
+        </details>
+      </details>
       <form onSubmit={(e) => handleSubmit(e, "free")}>
-              <input
-                type="text"
-                name="companyPostdesc"
-                placeholder="回答内容"
-              />
-              <input type="hidden" name="category" value="free"></input>
-              <button>投稿</button>
-            </form>
-              <div className="PostsComponents">
-                {free.map((post) => (
-                  <Post post={post} key={post._id} />
-                ))}
-              </div>
+        <input type="text" name="companyPostdesc" placeholder="回答内容" />
+        <input type="hidden" name="category" value="free"></input>
+        <button>投稿</button>
+      </form>
+      <div className="PostsComponents">
+        {free.map((post) => (
+          <Post post={post} key={post._id} />
+        ))}
+      </div>
     </div>
   );
 }
