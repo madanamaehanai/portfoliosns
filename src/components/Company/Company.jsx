@@ -13,6 +13,8 @@ function Company() {
   const [thegoal, setthegoal] = useState(() => []);
   const [improvement, setimprovement] = useState(() => []);
   const [whatdoyouthink, setwhatdoyouthink] = useState(() => []);
+  const [strength, setstrength] = useState(() => []);
+  const [weakness, setweakness] = useState(() => []);
   const [reasonforapplying, setreasonforapplying] = useState(() => []);
   const { companyId } = useParams();
   const [category, setCategory] = useState("free");
@@ -161,6 +163,36 @@ function Company() {
     fetchData();
   }, []);
 
+  //同業他社と比べた強味データの取得
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axiosInstance.get(
+          `/companypost/${companyId}/strength`
+        );
+        setstrength(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, []);
+
+  //同業他社と比べた弱みデータの取得
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axiosInstance.get(
+          `/companypost/${companyId}/weakness`
+        );
+        setweakness(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="Company">
       <p>Company</p>
@@ -238,6 +270,26 @@ function Company() {
         </details>
       </div>
       <div>
+        <details>
+          <summary>同業他社と比べた強味</summary>
+          <div className="PostsComponents">
+            {strength.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>同業他社と比べた弱み</summary>
+          <div className="PostsComponents">
+            {weakness.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+      </div>
+      <div>
         <div>投稿</div>
         <form onSubmit={(e) => handleSubmit(e)}>
           <input type="text" name="companyPostdesc" placeholder="企業名" />
@@ -252,6 +304,8 @@ function Company() {
             <option value="reasonforapplying">志望理由</option>
             <option value="improvement">サービス改善点</option>
             <option value="whatdoyouthink">当社サービスをどう思うか</option>
+            <option value="strength">同業他社と比べた強味</option>
+            <option value="weakness">同業他社と比べた弱み</option>
           </select>
           <button>作成</button>
         </form>
