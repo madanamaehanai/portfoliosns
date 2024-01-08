@@ -1,0 +1,21 @@
+//media query
+
+$breakpoints: (
+  // small スマホサイズ
+  "sm": "screen and (min-width: 480px)",
+  // medium タブレットサイズ
+  "md": "screen and (min-width: 768px)",
+  // large
+  "lg": "screen and (min-width: 1024px)",
+  // extra large
+  "xl": "screen and (min-width: 1280px)"
+) !default;
+//!default=他の場所で再定義されない限り、この値を保持
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+$contentMaxWidth: 1070px;
