@@ -51,8 +51,38 @@ function Company() {
 
     try {
       await axiosInstance.post("/companypost", newPost);
-      window.location.reload();
+      // window.location.reload();
       console.log("投稿成功");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  //会社情報の更新
+  const handleupdateSubmit = async (e) => {
+    e.preventDefault();
+
+    const updatedata = {
+      userId: user._id,
+      // companyname: e.target.elements.companyName.value.trim() !== "" ? e.target.elements.companyName.value : undefined,
+      // url: e.target.elements.companyURL.value.trim() !== "" ? e.target.elements.companyURL.value : undefined,
+      desc: e.target.elements.description.value.trim() !== "" ? e.target.elements.description.value : undefined,
+      // language: e.target.elements.uselanguage.value.trim() !== "" ? [e.target.elements.uselanguage.value] : undefined,
+      employees: e.target.elements.companyemployees.value.trim() !== "" ? e.target.elements.companyemployees.value : undefined,
+      // income: e.target.elements.annualincome.value.trim() !== "" ? e.target.elements.annualincome.value : undefined,
+      // salary: e.target.elements.startingsalary.value.trim() !== "" ? e.target.elements.startingsalary.value : undefined,
+      // philosophy: e.target.elements.managementphilosophy.value.trim() !== "" ? e.target.elements.managementphilosophy.value : undefined,
+      // capital: e.target.elements.companycapital.value.trim() !== "" ? e.target.elements.companycapital.value : undefined,
+      founding: e.target.elements.companyfounding.value.trim() !== "" ? e.target.elements.companyfounding.value : undefined,
+      listed: e.target.elements.listedcompany.value.trim() !== "" ? e.target.elements.listedcompany.value : undefined,
+      office: e.target.elements.companyoffice.value.trim() !== "" ? e.target.elements.companyoffice.value : undefined,
+      banks: e.target.elements.mainbanks.value.trim() !== "" ? [e.target.elements.mainbanks.value] : undefined,
+    };
+
+    try {
+      await axiosInstance.post(`/company/update/${companyId}`, updatedata);
+      window.location.reload();
+      console.log("会社情報修正成功");
     } catch (err) {
       console.log(err);
     }
@@ -211,7 +241,42 @@ function Company() {
           <div className="postText">創業：{company.founding}</div>
           <div className="postText">上場：{company.listed}</div>
           <div className="postText">事業所：{company.office}</div>
+          <div className="postText">主要取引銀行：{company.banks}</div>
         </div>
+      </div>
+      <div>
+        <details>
+          <summary>編集</summary>
+          <form onSubmit={(e) => handleupdateSubmit(e)}>
+            <input type="text" name="companyName" placeholder="企業名" />
+            <br></br>
+            <input type="text" name="companyURL" placeholder="企業URL" />
+            <br></br>
+            <input type="text" name="description" placeholder="会社概要" />
+            <br></br>
+            <input type="text" name="uselanguage" placeholder="使用言語" />
+            <br></br>
+            <input type="text" name="companyemployees" placeholder="従業員数" />
+            <br></br>
+            <input type="text" name="annualincome" placeholder="年収" />
+            <br></br>
+            <input type="text" name="startingsalary" placeholder="初任給" />
+            <br></br>
+            <input type="text" name="managementphilosophy" placeholder="理念" />
+            <br></br>
+            <input type="text" name="companycapital" placeholder="資本金" />
+            <br></br>
+            <input type="text" name="companyfounding" placeholder="創業" />
+            <br></br>
+            <input type="text" name="listedcompany" placeholder="上場" />
+            <br></br>
+            <input type="text" name="companyoffice" placeholder="事業所" />
+            <br></br>
+            <input type="text" name="mainbanks" placeholder="主要取引銀行" />
+            <br></br>
+            <button>編集</button>
+          </form>
+        </details>
       </div>
       <div>
         <details>
