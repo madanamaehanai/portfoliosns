@@ -3,6 +3,7 @@ import axiosInstance from "../../axios";
 import { AuthContext } from "../../state/AuthContext";
 import Post from "../Post/Post";
 import { useParams } from "react-router-dom";
+import ServicesPost from "../ServicesPost/ServicesPost";
 
 function Company() {
   const { user } = useContext(AuthContext);
@@ -66,17 +67,35 @@ function Company() {
       userId: user._id,
       // companyname: e.target.elements.companyName.value.trim() !== "" ? e.target.elements.companyName.value : undefined,
       // url: e.target.elements.companyURL.value.trim() !== "" ? e.target.elements.companyURL.value : undefined,
-      desc: e.target.elements.description.value.trim() !== "" ? e.target.elements.description.value : undefined,
+      desc:
+        e.target.elements.description.value.trim() !== ""
+          ? e.target.elements.description.value
+          : undefined,
       // language: e.target.elements.uselanguage.value.trim() !== "" ? [e.target.elements.uselanguage.value] : undefined,
-      employees: e.target.elements.companyemployees.value.trim() !== "" ? e.target.elements.companyemployees.value : undefined,
+      employees:
+        e.target.elements.companyemployees.value.trim() !== ""
+          ? e.target.elements.companyemployees.value
+          : undefined,
       // income: e.target.elements.annualincome.value.trim() !== "" ? e.target.elements.annualincome.value : undefined,
       // salary: e.target.elements.startingsalary.value.trim() !== "" ? e.target.elements.startingsalary.value : undefined,
       // philosophy: e.target.elements.managementphilosophy.value.trim() !== "" ? e.target.elements.managementphilosophy.value : undefined,
       // capital: e.target.elements.companycapital.value.trim() !== "" ? e.target.elements.companycapital.value : undefined,
-      founding: e.target.elements.companyfounding.value.trim() !== "" ? e.target.elements.companyfounding.value : undefined,
-      listed: e.target.elements.listedcompany.value.trim() !== "" ? e.target.elements.listedcompany.value : undefined,
-      office: e.target.elements.companyoffice.value.trim() !== "" ? e.target.elements.companyoffice.value : undefined,
-      banks: e.target.elements.mainbanks.value.trim() !== "" ? [e.target.elements.mainbanks.value] : undefined,
+      founding:
+        e.target.elements.companyfounding.value.trim() !== ""
+          ? e.target.elements.companyfounding.value
+          : undefined,
+      listed:
+        e.target.elements.listedcompany.value.trim() !== ""
+          ? e.target.elements.listedcompany.value
+          : undefined,
+      office:
+        e.target.elements.companyoffice.value.trim() !== ""
+          ? e.target.elements.companyoffice.value
+          : undefined,
+      banks:
+        e.target.elements.mainbanks.value.trim() !== ""
+          ? [e.target.elements.mainbanks.value]
+          : undefined,
     };
 
     try {
@@ -276,6 +295,12 @@ function Company() {
             <br></br>
             <button>編集</button>
           </form>
+        </details>
+      </div>
+      <div>
+        <details>
+          <summary>サービス</summary>
+          <ServicesPost post={company.service} />
         </details>
       </div>
       <div>
