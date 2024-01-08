@@ -203,15 +203,14 @@ function Company() {
           <div className="postText">会社URL：{company.url}</div>
           <div className="postText">会社概要：{company.desc}</div>
           <div className="postText">使用言語等：{company.language}</div>
-          <div className="postText">従業員数：#####</div>
-          <div className="postText">年収：#####</div>
-          <div className="postText">初任給：#####</div>
-          <div className="postText">理念：#####</div>
-          <div className="postText">資本金：#####</div>
-          <div className="postText">創業：#####</div>
-          <div className="postText">上場：#####</div>
-          <div className="postText">事業所：#####</div>
-          <div className="postText">資本金：#####</div>
+          <div className="postText">従業員数：{company.employees}</div>
+          <div className="postText">年収：{company.income}</div>
+          <div className="postText">初任給：{company.salary}</div>
+          <div className="postText">理念：{company.philosophy}</div>
+          <div className="postText">資本金：{company.capital}</div>
+          <div className="postText">創業：{company.founding}</div>
+          <div className="postText">上場：{company.listed}</div>
+          <div className="postText">事業所：{company.office}</div>
         </div>
       </div>
       <div>
