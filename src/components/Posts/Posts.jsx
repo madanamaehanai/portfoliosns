@@ -4,6 +4,7 @@ import Post from "../Post/Post";
 import { useContext } from "react";
 import { AuthContext } from "../../state/AuthContext";
 
+
 function Posts() {
   const { user } = useContext(AuthContext);
   // console.log(user._id);
@@ -25,11 +26,14 @@ function Posts() {
     fetchData();
   }, []);
 
+  
+
   return (
     <div className="PostsComponents">
       {posts.map((post) => (
         <Post post={post} key={post._id} />
       ))}
+      
     </div>
   );
 }
