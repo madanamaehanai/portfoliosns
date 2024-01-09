@@ -1,5 +1,6 @@
 import axiosInstance from "../../axios";
 import React, { useEffect, useState } from "react";
+import Delete from '../PostDelete/PostDelete'
 
 function Post({ post }) {
   const [user, setUser] = useState(() => []);
@@ -23,6 +24,7 @@ function Post({ post }) {
       <div className="postText">{user.username}</div>
       <div className="postText">{post.desc}</div>
       <div className="postText">{post.createdAt}</div>
+      <Delete post={post} key={post._id}/>
     </div>
   );
 }
