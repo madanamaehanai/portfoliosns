@@ -386,7 +386,7 @@ function Company() {
       <div>
         <div>投稿</div>
         <form onSubmit={(e) => handleSubmit(e)}>
-          <input type="text" name="companyPostdesc" placeholder="企業名" />
+          <input type="text" name="companyPostdesc" placeholder="情報を入力" />
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
