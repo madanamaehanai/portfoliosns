@@ -53,7 +53,7 @@ function Company() {
 
     try {
       await axiosInstance.post("/companypost", newPost);
-      // window.location.reload();
+      window.location.reload();
       console.log("投稿成功");
     } catch (err) {
       console.log(err);
