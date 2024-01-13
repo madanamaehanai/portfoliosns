@@ -2,7 +2,7 @@ import axiosInstance from "../../axios";
 import React, { useEffect, useState } from "react";
 import Delete from '../PostDelete/PostDelete'
 
-function Post({ post }) {
+function Post({ post, pass }) {
   const [user, setUser] = useState(() => []);
   // console.log("de-ta", user);
   useEffect(() => {
@@ -24,7 +24,7 @@ function Post({ post }) {
       <div className="postText">{user.username}</div>
       <div className="postText">{post.desc}</div>
       <div className="postText">{post.createdAt}</div>
-      <Delete post={post} key={post._id}/>
+      <Delete post={post} pass={pass} key={post._id}/>
     </div>
   );
 }

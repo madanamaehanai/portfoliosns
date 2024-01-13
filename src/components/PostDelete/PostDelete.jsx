@@ -1,13 +1,19 @@
 import React from 'react'
 import axiosInstance from "../../axios";
 
-function PostDelete({ post }) {
+function PostDelete({ post, pass }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+        
         try {
-          await axiosInstance.post(`/post/delete/${post._id}`);
+          if(pass=="home"){
+            console.log("homeから",pass);
+            await axiosInstance.post(`/post/delete/${post._id}`);
+          }else if(pass=="company"){
+            console.log("companyから",pass);
+            await axiosInstance.post(`/companypost/delete/${post._id}`);
+          }
           window.location.reload();
           console.log("削除成功");
         } catch (err) {
@@ -16,7 +22,7 @@ function PostDelete({ post }) {
       };
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-        <button>削除</button>
+        <button type="submit">削除</button>
       </form>
   )
 }
