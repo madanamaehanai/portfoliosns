@@ -18,7 +18,7 @@ function Topbar() {
     // mobileMenu.init();
   };
 
-  // MobileMenu クラスの定義も Topbar コンポーネントの中に移動
+  
 
   class MobileMenu {
     constructor() {
@@ -33,6 +33,7 @@ function Topbar() {
 
     _getEventType() {
       const isTouchCapable = "ontouchstart" in window;
+
       return isTouchCapable ? "touchstart" : "click";
     }
 
@@ -55,7 +56,11 @@ function Topbar() {
         <button>ログアウト</button>
       </form>
       <form onSubmit={(e) => handleSubmitmobile(e)}>
-        <button className="mobile-menu__btn">モバイルボタン</button>
+        <button className="mobile-menu__btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </form>
     </div>
   );
