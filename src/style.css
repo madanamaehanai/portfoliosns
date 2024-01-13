@@ -98,10 +98,13 @@
   right: 0;
   top: 60px;
   width: 300px;
+  opacity: 0;
+  visibility: hidden;
 }
 .mobile-menu .logo {
   padding: 0 40px;
   font-size: 38px;
+  display: block;
   opacity: 0;
 }
 .mobile-menu__btn {
