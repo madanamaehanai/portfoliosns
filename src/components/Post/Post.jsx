@@ -1,6 +1,8 @@
 import axiosInstance from "../../axios";
 import React, { useEffect, useState } from "react";
 import Delete from '../PostDelete/PostDelete'
+import { format } from 'timeago.js';
+
 
 function Post({ post, pass }) {
   const [user, setUser] = useState(() => []);
@@ -21,6 +23,7 @@ function Post({ post, pass }) {
   }, []);
   return (
     <div className="PostComponents">
+      <div className="postText">{format(post.createdAt)}</div>
       <div className="postText">{user.username}</div>
       <div className="postText">{post.desc}</div>
       <div className="postText">{post.createdAt}</div>

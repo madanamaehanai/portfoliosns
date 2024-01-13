@@ -17,7 +17,11 @@ function Posts() {
           // "/post/timeline/65758f3199f189d46a3204a7"
           `/post/timeline/${user._id}`
         );
-        setPosts(response.data);
+        setPosts(
+          response.data.sort((post1,post2) => {
+            return new Date(post2.createdAt) - new Date(post1.createdAt);
+          })
+          );
       } catch (error) {
         console.error(error);
       }
