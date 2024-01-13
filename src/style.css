@@ -24,6 +24,8 @@
   width: 100%;
   height: 70px;
   background-color: rgb(123, 167, 255);
+  display: flex;
+  justify-content: space-around;
 }
 @media screen and (min-width: 1024px) {
   .TopbarComponents {
@@ -32,8 +34,7 @@
     background-color: gray;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-around;
   }
 }
 
@@ -41,11 +42,16 @@
   display: flex;
 }
 .HomeComponents .RightComponents {
-  display: flex;
-  flex-direction: column;
-  flex: 3;
-  align-items: center;
-  background-color: rgb(200, 200, 200);
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .HomeComponents .RightComponents {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    align-items: center;
+    background-color: rgb(200, 200, 200);
+  }
 }
 .HomeComponents .CenterComponents {
   display: flex;

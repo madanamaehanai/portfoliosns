@@ -3,11 +3,14 @@
 .HomeComponents {
   display: flex;
   .RightComponents {
+    display: none;
+    @include mq(lg) {
     display: flex;
     flex-direction: column;
     flex: 3;
     align-items: center;
     background-color: rgb(200, 200, 200);
+    }
   }
   .CenterComponents {
     display: flex;
