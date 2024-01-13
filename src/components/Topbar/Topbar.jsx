@@ -48,10 +48,6 @@ function Topbar() {
 
   return (
     <div className="TopbarComponents">
-      {/* <div id="global-container">
-        <div id="container"></div>
-        <nav className="mobile-menu__cover"></nav>
-      </div> */}
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="Topbar"></div>
         <div>Topbar</div>

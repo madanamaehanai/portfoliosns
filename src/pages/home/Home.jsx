@@ -9,6 +9,7 @@ function Home() {
   return (
     <div id="global-container">
       <div id="container">
+        <div class="mobile-menu__cover"></div>
         <Topbar />
         <div className="HomeComponents">
           <LeftComponents />
@@ -16,11 +17,11 @@ function Home() {
           <RightComponents />
         </div>
       </div>
-      <nav className="mobile-menu__cover">
+      <nav className="mobile-menu">
         <div className="logo">
           {/* <img class="logo__img" src="images/logo.svg" /> */}
-          <span className="logo__stay">Stay</span>
-          <span className="logo__world">World</span>
+          <span className="logo__stay">portfolio</span>
+          <span className="logo__world">SNS</span>
         </div>
         <ul className="mobile-menu__main">
           <li className="mobile-menu__item">
