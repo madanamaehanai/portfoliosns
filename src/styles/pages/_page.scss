@@ -1,47 +1,50 @@
+@use "../../styles/globals/" as *;
 
-  
-  .HomeComponents {
+.HomeComponents {
+  display: flex;
+  .RightComponents {
     display: flex;
-    .RightComponents {
+    flex-direction: column;
+    flex: 3;
+    align-items: center;
+    background-color: rgb(200, 200, 200);
+  }
+  .CenterComponents {
+    display: flex;
+    // justify-content: center;
+    flex-direction: column;
+    flex: 7;
+    min-height: 100vh;
+    .PostingComponents {
       display: flex;
-      flex-direction: column;
-      flex: 3;
-      align-items: center;
-      background-color: rgb(200, 200, 200);
+      justify-content: center;
+      margin: 10px;
+      background-color: bisque;
     }
-    .CenterComponents {
+    .PostsComponents {
       display: flex;
-      // justify-content: center;
+      justify-content: center;
       flex-direction: column;
-      flex: 7;
-      min-height: 100vh;
-      .PostingComponents {
-        display: flex;
-        justify-content: center;
-        margin: 10px;
-        background-color: bisque;
-      }
-      .PostsComponents {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-      }
     }
-    .LeftComponents {
+  }
+  .LeftComponents {
+    display: none;
+    @include mq(lg) {
       display: flex;
       flex: 3;
       justify-content: center;
       background-color: rgb(200, 200, 200);
     }
   }
-  
-  .PostsComponents {
-    margin-top: 20px;
-    .companypost {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: aqua;
-      margin: 10px 0;
-    }
+}
+
+.PostsComponents {
+  margin-top: 20px;
+  .companypost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+    margin: 10px 0;
   }
+}

@@ -74,10 +74,15 @@
   flex-direction: column;
 }
 .HomeComponents .LeftComponents {
-  display: flex;
-  flex: 3;
-  justify-content: center;
-  background-color: rgb(200, 200, 200);
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .HomeComponents .LeftComponents {
+    display: flex;
+    flex: 3;
+    justify-content: center;
+    background-color: rgb(200, 200, 200);
+  }
 }
 
 .PostsComponents {
