@@ -1,0 +1,63 @@
+.TopbarComponents {
+    width: 100%;
+    height: 80px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    flex-direction: column;
+    // .Topbar {
+  
+    // }
+  }
+  
+  .HomeComponents {
+    display: flex;
+    .RightComponents {
+      display: flex;
+      flex-direction: column;
+      flex: 3;
+      align-items: center;
+      background-color: rgb(200, 200, 200);
+    }
+    .CenterComponents {
+      display: flex;
+      // justify-content: center;
+      flex-direction: column;
+      flex: 7;
+      min-height: 100vh;
+      .PostingComponents {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        background-color: bisque;
+      }
+      .PostsComponents {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .PostComponents {
+        margin: 20px 10%;
+        background-color: rgb(198, 216, 216);
+      }
+    }
+    .LeftComponents {
+      display: flex;
+      flex: 3;
+      justify-content: center;
+      background-color: rgb(200, 200, 200);
+    }
+  }
+  
+  .PostsComponents {
+    margin-top: 20px;
+    .companypost {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: aqua;
+      margin: 10px 0;
+    }
+  }

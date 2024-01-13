@@ -261,6 +261,13 @@ function Company() {
           <div className="postText">創業：{company.founding}</div>
           <div className="postText">上場：{company.listed}</div>
           <div className="postText">事業所：{company.office}</div>
+          {/* <div>
+            {company.office.map((office, index) => (
+              <div key={index} className="postText"> 
+                事業所 {index +1}:{office}
+              </div>
+            ))}
+          </div> */}
           <div className="postText">主要取引銀行：{company.banks}</div>
         </div>
       </div>
