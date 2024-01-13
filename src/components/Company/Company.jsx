@@ -309,7 +309,7 @@ function Company() {
           <summary>年収</summary>
           <div className="PostsComponents">
             {incomes.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -319,7 +319,7 @@ function Company() {
           <summary>福利厚生</summary>
           <div className="PostsComponents">
             {welfare.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -329,7 +329,7 @@ function Company() {
           <summary>志望動機</summary>
           <div className="PostsComponents">
             {reasonforapplying.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -339,7 +339,7 @@ function Company() {
           <summary>入社後の目標</summary>
           <div className="PostsComponents">
             {thegoal.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -349,7 +349,7 @@ function Company() {
           <summary>当社サービスの改善点を教えてください。</summary>
           <div className="PostsComponents">
             {improvement.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -359,7 +359,7 @@ function Company() {
           <summary>当社サービスをどう思いますか？</summary>
           <div className="PostsComponents">
             {whatdoyouthink.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -369,7 +369,7 @@ function Company() {
           <summary>同業他社と比べた強味</summary>
           <div className="PostsComponents">
             {strength.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -379,7 +379,7 @@ function Company() {
           <summary>同業他社と比べた弱み</summary>
           <div className="PostsComponents">
             {weakness.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
