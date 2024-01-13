@@ -1,0 +1,18 @@
+@use "../../styles/globals/" as *;
+// @use "../../styles/parts/" as *;
+
+.TopbarComponents {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(123, 167, 255);
+
+  @include mq(lg) {
+    width: 100%;
+    height: 80px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

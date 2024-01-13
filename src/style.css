@@ -24,14 +24,26 @@
   transition: all 0.5s;
 }
 
+.CenterComponents .PostComponents {
+  margin: 20px 10%;
+  background-color: rgb(162, 196, 196);
+}
+
 .TopbarComponents {
   width: 100%;
-  height: 80px;
-  background-color: gray;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  height: 70px;
+  background-color: rgb(123, 167, 255);
+}
+@media screen and (min-width: 1024px) {
+  .TopbarComponents {
+    width: 100%;
+    height: 80px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 .HomeComponents {
@@ -60,10 +72,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.HomeComponents .CenterComponents .PostComponents {
-  margin: 20px 10%;
-  background-color: rgb(198, 216, 216);
 }
 .HomeComponents .LeftComponents {
   display: flex;
