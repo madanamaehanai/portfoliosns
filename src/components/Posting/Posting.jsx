@@ -29,8 +29,10 @@ function Posting() {
   return (
     <div className="PostingComponents">
       <form onSubmit={(e) => handleSubmit(e)}>
-        <input type="text" ref={desc} />
-        <button>投稿</button>
+        <textarea  ref={desc} className="post" />
+        <div className="option">
+          <button>投稿</button>
+        </div>
       </form>
     </div>
   );

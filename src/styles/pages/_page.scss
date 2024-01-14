@@ -18,12 +18,7 @@
     flex-direction: column;
     flex: 7;
     min-height: 100vh;
-    .PostingComponents {
-      display: flex;
-      justify-content: center;
-      margin: 10px;
-      background-color: bisque;
-    }
+    
     .PostsComponents {
       display: flex;
       justify-content: center;
@@ -41,13 +36,4 @@
   }
 }
 
-.PostsComponents {
-  margin-top: 20px;
-  .companypost {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: aqua;
-    margin: 10px 0;
-  }
-}
+
