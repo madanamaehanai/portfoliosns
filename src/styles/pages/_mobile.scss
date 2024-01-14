@@ -81,9 +81,12 @@ $cMenuOpen: $cBlack;
   }
 
   & .mobile-menu {
+    opacity: 1;
+    visibility: visible;
     & .logo {
-      // display: block;
+// display: block;
       opacity: 1;
+      visibility: visible;
     }
     &__cover {
       opacity: 1;
