@@ -29,6 +29,7 @@ function AddCompany() {
       <div>AddCompany</div>
       <form onSubmit={(e) => handleSubmit(e)} className="form">
         <div className="form__range">
+          <div className="text">企業名：</div>
           <input
             type="text"
             name="companyName"
@@ -37,6 +38,7 @@ function AddCompany() {
           />
         </div>
         <div className="form__range">
+          <div className="text">企業URL：</div>
           <input
             type="text"
             name="companyURL"
@@ -45,6 +47,7 @@ function AddCompany() {
           />
         </div>
         <div className="form__range">
+          <div className="text">企業概要：</div>
           <input
             type="text"
             name="description"
@@ -53,6 +56,7 @@ function AddCompany() {
           />
         </div>
         <div className="form__range">
+        <div className="text">業種を選択：</div>
           <select
             multiple // 複数選択可能にする
             value={categories}
@@ -69,7 +73,7 @@ function AddCompany() {
           </select>
         </div>
         <div className="form__range">
-          <button className="input">作成</button>
+          <button className="btn">作成</button>
         </div>
       </form>
     </div>

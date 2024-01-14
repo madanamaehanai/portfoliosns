@@ -216,7 +216,7 @@
 }
 
 .companypage .companypost {
-  background-color: aqua;
+  background-color: rgb(189, 189, 189);
   display: flex;
   width: 100%;
 }
@@ -234,8 +234,17 @@
 }
 .companypage .companypost__range .form__range {
   width: 80%;
+  margin-bottom: 20px;
+  display: flex;
+  height: 50px;
+}
+.companypage .companypost__range .form__range .text {
+  width: 20%;
 }
 .companypage .companypost__range .form__range .input {
+  width: 80%;
+}
+.companypage .companypost__range .form__range .btn {
   width: 100%;
 }
 .companypage .companygroup {
