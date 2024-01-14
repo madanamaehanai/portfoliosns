@@ -23,9 +23,9 @@ $cMenuOpen: $cBlack;
     outline: none !important;
     cursor: pointer;
 
-    // @include mq(lg) {
-    //   display: none;
-    // }
+    @include mq(lg) {
+      display: none;
+    }
 
     & > span {
       background-color: $cMenuClose;
@@ -71,6 +71,19 @@ $cMenuOpen: $cBlack;
     margin-top: 30px;
     color: $cBlack;
     text-decoration: none !important;
+
+    span {
+      display: flex;
+      flex-direction: column;
+    }
+    .main-title {
+      font-size: 32px;
+      font-weight: 600;
+    }
+    .sub-title{
+      font-size: 18px;
+      margin-left: 10px;
+    }
   }
 }
 
@@ -84,7 +97,7 @@ $cMenuOpen: $cBlack;
     opacity: 1;
     visibility: visible;
     & .logo {
-// display: block;
+      // display: block;
       opacity: 1;
       visibility: visible;
     }

@@ -48,8 +48,8 @@ function Topbar() {
   return (
     <div className="TopbarComponents">
       <div className="logo">
-        <span className="logo__stay">Portfolio</span>
-        <span className="logo__world">SNS</span>
+        <span className="logo__textmain">Portfolio</span>
+        <span className="logo__textmain">SNS</span>
       </div>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="Topbar"></div>

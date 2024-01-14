@@ -66,9 +66,17 @@
 }
 .TopbarComponents .logo {
   margin-left: 50px;
+  flex: 3;
+}
+.TopbarComponents .logo__textmain {
+  font-size: 32px;
+  font-weight: 600;
 }
 .TopbarComponents .mobilemenu {
   margin-right: 50px;
+  display: flex;
+  justify-content: end;
+  flex: 3;
 }
 
 .HomeComponents {
@@ -146,6 +154,11 @@
   outline: none !important;
   cursor: pointer;
 }
+@media screen and (min-width: 1024px) {
+  .mobile-menu__btn {
+    display: none;
+  }
+}
 .mobile-menu__btn > span {
   background-color: black;
   width: 35px;
@@ -188,6 +201,18 @@
   margin-top: 30px;
   color: black;
   text-decoration: none !important;
+}
+.mobile-menu__link span {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-menu__link .main-title {
+  font-size: 32px;
+  font-weight: 600;
+}
+.mobile-menu__link .sub-title {
+  font-size: 18px;
+  margin-left: 10px;
 }
 
 .menu-open #container {

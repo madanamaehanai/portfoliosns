@@ -20,8 +20,16 @@
 
   .logo {
     margin-left: 50px;
+    flex: 3;
+    &__textmain {
+      font-size: 32px;
+      font-weight: 600;
+    }
   }
   .mobilemenu {
     margin-right: 50px;
+    display: flex;
+    justify-content: end;
+    flex: 3;
   }
 }
