@@ -79,7 +79,7 @@ function Company() {
           : undefined,
       // income: e.target.elements.annualincome.value.trim() !== "" ? e.target.elements.annualincome.value : undefined,
       // salary: e.target.elements.startingsalary.value.trim() !== "" ? e.target.elements.startingsalary.value : undefined,
-      // philosophy: e.target.elements.managementphilosophy.value.trim() !== "" ? e.target.elements.managementphilosophy.value : undefined,
+      philosophy: e.target.elements.managementphilosophy.value.trim() !== "" ? e.target.elements.managementphilosophy.value : undefined,
       // capital: e.target.elements.companycapital.value.trim() !== "" ? e.target.elements.companycapital.value : undefined,
       founding:
         e.target.elements.companyfounding.value.trim() !== ""
@@ -243,6 +243,33 @@ function Company() {
     fetchData();
   }, []);
 
+  //会社サービスの追加
+  const handleserviceaddSubmit = async (e) => {
+    e.preventDefault();
+
+    const newService = {
+      servicesname: e.target.elements.serviceName.value,
+      servicesurl: e.target.elements.serviceURL.value,
+      userId: user._id,
+      servicesdesc: e.target.elements.description.value,
+      category: e.target.elements.category.value,
+      companyid: `${companyId}`,
+    };
+
+    
+    // console.log("POST_ID", post);
+    try {
+      await axiosInstance.post(
+        `/company/company/services/${companyId}`,
+        newService
+      );
+      window.location.reload();
+      console.log("投稿成功");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="Company">
       <p>Company</p>
@@ -309,6 +336,16 @@ function Company() {
         <details>
           <summary>サービス</summary>
           <ServicesPost post={company.service} />
+          <details>
+            <summary>サービス情報を追加</summary>
+            <form onSubmit={(e) => handleserviceaddSubmit(e)}>
+        <input type="text" name="serviceName" placeholder="サービス名" />
+        <input type="text" name="serviceURL" placeholder="サービスURL" />
+        <input type="text" name="description" placeholder="概要" />
+        <input type="text" name="category" placeholder="業種" />
+        <button>作成</button>
+      </form>
+          </details>
         </details>
       </div>
       <div>

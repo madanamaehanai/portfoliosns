@@ -12,6 +12,7 @@ function AddCompany() {
     const newCompany = {
       companyname: e.target.elements.companyName.value,
       url: e.target.elements.companyURL.value,
+      desc: e.target.elements.description.value,
       userId: user._id,
       category: categories,
     };
@@ -56,7 +57,7 @@ function AddCompany() {
           />
         </div>
         <div className="form__range">
-        <div className="text">業種を選択：</div>
+          <div className="text">業種を選択：</div>
           <select
             multiple // 複数選択可能にする
             value={categories}
