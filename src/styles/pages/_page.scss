@@ -30,8 +30,24 @@
     @include mq(lg) {
       display: flex;
       flex: 3;
-      justify-content: center;
-      background-color: rgb(200, 200, 200);
+      align-items: center;
+      // background-color: rgb(200, 200, 200);
+      flex-direction: column;
+    }
+    .pagelink{
+      width: 80%;
+      height: 50px;
+      background-color: azure;
+      border-radius: 10px;
+      margin-top: 12px;
+      .topbarLink{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 550;
+      }
     }
   }
 }

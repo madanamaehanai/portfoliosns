@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../state/AuthContext";
 import { logoutCall } from "../../actionCalls";
+import { Link } from "react-router-dom";
 
 function Topbar() {
   const { user, dispatch } = useContext(AuthContext);
@@ -48,8 +49,10 @@ function Topbar() {
   return (
     <div className="TopbarComponents">
       <div className="logo">
+      <Link to="/" className="topbarLink" style={{ textDecoration: "none" }}>
         <span className="logo__textmain">Portfolio</span>
         <span className="logo__textmain">SNS</span>
+      </Link>
       </div>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="Topbar"></div>
