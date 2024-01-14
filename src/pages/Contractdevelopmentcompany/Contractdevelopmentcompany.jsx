@@ -9,7 +9,7 @@ function Contractdevelopmentcompany() {
   return (
     <div id="global-container">
       <div id="container">
-        <div class="mobile-menu__cover"></div>
+        <div className="mobile-menu__cover"></div>
         <Topbar />
         <div className="HomeComponents">
           <LeftComponents />
