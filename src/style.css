@@ -217,6 +217,26 @@
 
 .companypage .companypost {
   background-color: aqua;
+  display: flex;
+  width: 100%;
+}
+.companypage .companypost__range {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.companypage .companypost__range .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.companypage .companypost__range .form__range {
+  width: 80%;
+}
+.companypage .companypost__range .form__range .input {
+  width: 100%;
 }
 .companypage .companygroup {
   display: flex;

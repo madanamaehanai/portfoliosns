@@ -25,26 +25,52 @@ function AddCompany() {
     }
   };
   return (
-    <div>
+    <div className="companypost__range">
       <div>AddCompany</div>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input type="text" name="companyName" placeholder="企業名" />
-        <input type="text" name="companyURL" placeholder="企業URL" />
-        <input type="text" name="description" placeholder="概要" />
-        <select
-          multiple // 複数選択可能にする
-          value={categories}
-          onChange={(e) =>
-            setCategories(
-              Array.from(e.target.selectedOptions, (option) => option.value)
-            )
-          }
-        >
-          <option value="Inhousedevelopmentcompany">自社開発</option>
-          <option value="Contractdevelopmentcompany">受託開発</option>
-          <option value="sescompany">SES</option>
-        </select>
-        <button>作成</button>
+      <form onSubmit={(e) => handleSubmit(e)} className="form">
+        <div className="form__range">
+          <input
+            type="text"
+            name="companyName"
+            placeholder="企業名"
+            className="input"
+          />
+        </div>
+        <div className="form__range">
+          <input
+            type="text"
+            name="companyURL"
+            placeholder="企業URL"
+            className="input"
+          />
+        </div>
+        <div className="form__range">
+          <input
+            type="text"
+            name="description"
+            placeholder="概要"
+            className="input"
+          />
+        </div>
+        <div className="form__range">
+          <select
+            multiple // 複数選択可能にする
+            value={categories}
+            className="input"
+            onChange={(e) =>
+              setCategories(
+                Array.from(e.target.selectedOptions, (option) => option.value)
+              )
+            }
+          >
+            <option value="Inhousedevelopmentcompany">自社開発</option>
+            <option value="Contractdevelopmentcompany">受託開発</option>
+            <option value="sescompany">SES</option>
+          </select>
+        </div>
+        <div className="form__range">
+          <button className="input">作成</button>
+        </div>
       </form>
     </div>
   );

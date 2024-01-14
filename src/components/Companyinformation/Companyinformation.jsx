@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 function Companyinformation() {
   return (
     <div className="companypage">
-      <div className="companypost">
         <div>Companyinformation</div>
+      <div className="companypost">
         <AddCompany />
       </div>
       <div className="companygroup">
