@@ -6,7 +6,8 @@
   height: 70px;
   background-color: rgb(123, 167, 255);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 
   @include mq(lg) {
     width: 100%;
@@ -15,5 +16,12 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+  }
+
+  .logo {
+    margin-left: 50px;
+  }
+  .mobilemenu {
+    margin-right: 50px;
   }
 }

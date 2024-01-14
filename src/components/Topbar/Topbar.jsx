@@ -18,8 +18,6 @@ function Topbar() {
     // mobileMenu.init();
   };
 
-  
-
   class MobileMenu {
     constructor() {
       this.DOM = {};
@@ -49,19 +47,25 @@ function Topbar() {
 
   return (
     <div className="TopbarComponents">
+      <div className="logo">
+        <span className="logo__stay">Portfolio</span>
+        <span className="logo__world">SNS</span>
+      </div>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="Topbar"></div>
         <div>Topbar</div>
         <div>{user.username}</div>
         <button>ログアウト</button>
       </form>
-      <form onSubmit={(e) => handleSubmitmobile(e)}>
-        <button className="mobile-menu__btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </form>
+      <div className="mobilemenu">
+        <form onSubmit={(e) => handleSubmitmobile(e)}>
+          <button className="mobile-menu__btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Companyinformation() {
   return (
     <>
-      <div className="CenterComponents">
+      <div>
         <div>Companyinformation</div>
         <AddCompany />
       </div>

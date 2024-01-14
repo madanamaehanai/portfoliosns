@@ -25,7 +25,8 @@
   height: 70px;
   background-color: rgb(123, 167, 255);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 }
 @media screen and (min-width: 1024px) {
   .TopbarComponents {
@@ -36,6 +37,12 @@
     align-items: center;
     justify-content: space-around;
   }
+}
+.TopbarComponents .logo {
+  margin-left: 50px;
+}
+.TopbarComponents .mobilemenu {
+  margin-right: 50px;
 }
 
 .HomeComponents {
