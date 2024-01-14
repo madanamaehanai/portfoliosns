@@ -49,6 +49,23 @@
       padding: 10px;
       margin-top: 20px;
       border-radius: 10px;
+
+      .maintext {
+        font-size: 24px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+      }
+      .subtext {
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+      }
+      .topbarLink {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }
