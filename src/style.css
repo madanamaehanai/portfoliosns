@@ -18,6 +18,32 @@
 .CenterComponents .PostComponents {
   margin: 20px 10%;
   background-color: rgb(162, 196, 196);
+  border-radius: 10px;
+  padding: 15px;
+}
+.CenterComponents .PostComponents .toptitle {
+  display: flex;
+}
+.CenterComponents .PostComponents .toptitle .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: azure;
+}
+.CenterComponents .PostComponents .toptitle .postText {
+  margin-left: 10px;
+  font-size: 18px;
+  display: flex;
+  align-items: end;
+}
+.CenterComponents .PostComponents .description {
+  display: flex;
+  margin: 10px 0;
+  font-size: 24px;
+}
+.CenterComponents .PostComponents .option {
+  display: flex;
+  justify-content: end;
 }
 
 .TopbarComponents {
