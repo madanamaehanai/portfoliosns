@@ -22,7 +22,13 @@
     .description {
       display: flex;
       margin: 10px 0;
-      font-size: 24px;
+      .postTexttitle{
+        flex: 1;
+      }
+      .postText{
+        font-size: 24px;
+        flex: 5;
+      }
     }
     .option {
       display: flex;

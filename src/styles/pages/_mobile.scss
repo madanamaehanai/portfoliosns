@@ -109,9 +109,9 @@ $cMenuOpen: $cBlack;
       transform: none;
       opacity: 1;
 
-      @for $i from 1 through 5 {
+      @for $i from 1 through 6 {
         &:nth-child(#{$i}) {
-          transition-delay: $i * 0.07s;
+          transition-delay: $i * 0.1s;
         }
       }
     }

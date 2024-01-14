@@ -28,7 +28,7 @@ function Post({ post, pass }) {
         <div className="postText">{format(post.createdAt)}</div>
       </div>
       <div className="description">
-        <div className="postText">投稿内容：</div>
+        <div className="postTexttitle">投稿内容：</div>
         <div className="postText">{post.desc}</div>
       </div>
       <div className="option">
