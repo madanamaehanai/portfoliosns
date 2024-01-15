@@ -101,6 +101,7 @@
 .TopbarComponents .logo__textmain {
   font-size: 32px;
   font-weight: 600;
+  color: black;
 }
 .TopbarComponents .mobilemenu {
   margin-right: 50px;

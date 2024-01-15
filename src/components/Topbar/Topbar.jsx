@@ -1,17 +1,10 @@
 import React from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../state/AuthContext";
-import { logoutCall } from "../../actionCalls";
 import { Link } from "react-router-dom";
 
 function Topbar() {
-  const { user, dispatch } = useContext(AuthContext);
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault(); // リロード回避
-
-  //   logoutCall(dispatch);
-  // };
+  const { user } = useContext(AuthContext);
 
   const handleSubmitmobile = async (e) => {
     e.preventDefault(); // リロード回避
@@ -55,11 +48,7 @@ function Topbar() {
       </Link>
       </div>
         <div>{user.username}</div>
-      {/* <form onSubmit={(e) => handleSubmit(e)}>
-        <div className="Topbar"></div>
-        <div>Topbar</div>
-        <button>ログアウト</button>
-      </form> */}
+
       <div className="mobilemenu">
         <form onSubmit={(e) => handleSubmitmobile(e)}>
           <button className="mobile-menu__btn">
