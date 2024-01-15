@@ -1,7 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../state/AuthContext";
+import { logoutCall } from "../../actionCalls";
 
 function LeftComponents() {
+
+  const { dispatch } = useContext(AuthContext);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // リロード回避
+
+    logoutCall(dispatch);
+  };
   return (
     <div className="LeftComponents">
       <div>LeftComponents</div>
@@ -85,7 +96,11 @@ function LeftComponents() {
           アカウント一覧
         </Link>
       </div>
-      <div className="pagelink"></div>
+      {/* <div className="pagelink" onSubmit={(e) => handleSubmit(e)}>   */}
+        <form className="pagelink" onSubmit={(e) => handleSubmit(e)}>
+          <button className="pagelink__btn">ログアウト</button>
+        </form>
+      {/* </div> */}
     </div>
   );
 }

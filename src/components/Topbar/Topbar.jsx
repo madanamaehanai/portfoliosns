@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 function Topbar() {
   const { user, dispatch } = useContext(AuthContext);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // リロード回避
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault(); // リロード回避
 
-    logoutCall(dispatch);
-  };
+  //   logoutCall(dispatch);
+  // };
 
   const handleSubmitmobile = async (e) => {
     e.preventDefault(); // リロード回避
@@ -54,12 +54,12 @@ function Topbar() {
         <span className="logo__textmain">SNS</span>
       </Link>
       </div>
-      <form onSubmit={(e) => handleSubmit(e)}>
+        <div>{user.username}</div>
+      {/* <form onSubmit={(e) => handleSubmit(e)}>
         <div className="Topbar"></div>
         <div>Topbar</div>
-        <div>{user.username}</div>
         <button>ログアウト</button>
-      </form>
+      </form> */}
       <div className="mobilemenu">
         <form onSubmit={(e) => handleSubmitmobile(e)}>
           <button className="mobile-menu__btn">
