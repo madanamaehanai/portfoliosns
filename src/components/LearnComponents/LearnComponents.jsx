@@ -4,6 +4,7 @@ import { AuthContext } from "../../state/AuthContext";
 import Post from "../Post/Post";
 
 function LearnComponents() {
+  const pass = "learn";
   const { user } = useContext(AuthContext);
   const [free, setfree] = useState(() => []);
   const [react, setreact] = useState(() => []);
@@ -130,7 +131,7 @@ function LearnComponents() {
       </form>
       <div className="PostsComponents">
         {free.map((post) => (
-          <Post post={post} key={post._id} />
+          <Post post={post} pass={pass} key={post._id} />
         ))}
       </div>
     </div>

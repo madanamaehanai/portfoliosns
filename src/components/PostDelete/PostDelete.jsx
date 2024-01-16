@@ -8,11 +8,13 @@ function PostDelete({ post, pass }) {
         
         try {
           if(pass=="home"){
-            console.log("homeから",pass);
+            // console.log("homeから",pass);
             await axiosInstance.post(`/post/delete/${post._id}`);
           }else if(pass=="company"){
-            console.log("companyから",pass);
+            // console.log("companyから",pass);
             await axiosInstance.post(`/companypost/delete/${post._id}`);
+          }else if(pass=="learn"){
+            // console.log("learnから",pass);
           }
           window.location.reload();
           console.log("削除成功");
