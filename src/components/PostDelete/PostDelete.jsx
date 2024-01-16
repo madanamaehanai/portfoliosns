@@ -15,6 +15,8 @@ function PostDelete({ post, pass }) {
       } else if (pass == "learn") {
         // console.log("learnから",pass);
         await axiosInstance.post(`/learn/delete/${post._id}`);
+      } else if (pass == "preparetion") {
+        console.log("preparetionから",pass);
       }
       window.location.reload();
       console.log("削除成功");

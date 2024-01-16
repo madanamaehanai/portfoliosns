@@ -5,6 +5,7 @@ import Post from "../Post/Post";
 import { useParams } from "react-router-dom";
 
 function Preparation() {
+  const pass = "preparetion";
   const { user } = useContext(AuthContext);
   const [free, setfree] = useState(() => []);
   const [typically1, settypically1] = useState(() => []);
@@ -717,7 +718,7 @@ function Preparation() {
         </form>
         <div className="PostsComponents">
           {free.map((post) => (
-            <Post post={post} key={post._id} />
+            <Post post={post} pass={pass} key={post._id} />
           ))}
         </div>
       </div>
