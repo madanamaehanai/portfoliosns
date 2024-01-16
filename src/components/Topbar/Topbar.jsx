@@ -1,10 +1,7 @@
 import React from "react";
-import { useContext } from "react";
-import { AuthContext } from "../../state/AuthContext";
 import { Link } from "react-router-dom";
 
 function Topbar() {
-  const { user } = useContext(AuthContext);
 
   const handleSubmitmobile = async (e) => {
     e.preventDefault(); // リロード回避
@@ -42,12 +39,11 @@ function Topbar() {
   return (
     <div className="TopbarComponents">
       <div className="logo">
-      <Link to="/" className="topbarLink" style={{ textDecoration: "none" }}>
-        <span className="logo__textmain">Portfolio</span>
-        <span className="logo__textmain">SNS</span>
-      </Link>
+        <Link to="/" className="topbarLink" style={{ textDecoration: "none" }}>
+          <span className="logo__textmain">Portfolio</span>
+          <span className="logo__textmain">SNS</span>
+        </Link>
       </div>
-        <div>{user.username}</div>
 
       <div className="mobilemenu">
         <form onSubmit={(e) => handleSubmitmobile(e)}>
