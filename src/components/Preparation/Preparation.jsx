@@ -47,6 +47,7 @@ function Preparation() {
   const [engineer10, setengineer10] = useState(() => []);
   const [engineer11, setengineer11] = useState(() => []);
   const [engineer12, setengineer12] = useState(() => []);
+  const [engineer13, setengineer13] = useState(() => []);
 
   // 投稿データの取得
   const fetchData = async (endpoint, setter) => {
@@ -100,6 +101,7 @@ function Preparation() {
     fetchData("engineer10", setengineer10);
     fetchData("engineer11", setengineer11);
     fetchData("engineer12", setengineer12);
+    fetchData("engineer13", setengineer13);
   }, []);
 
   // 投稿
@@ -673,6 +675,20 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer11.map((post) => (
+              <Post post={post} key={post._id} />
+            ))}
+          </div>
+        </details>
+        {/* 将来的には何をやりたいですか？ */}
+        <details>
+          <summary>将来的には何をやりたいですか？</summary>
+          <form onSubmit={(e) => handleSubmit(e, "engineer13")}>
+            <input type="text" name="companyPostdesc" placeholder="回答内容" />
+            <input type="hidden" name="category" value="engineer13"></input>
+            <button>投稿</button>
+          </form>
+          <div className="PostsComponents">
+            {engineer13.map((post) => (
               <Post post={post} key={post._id} />
             ))}
           </div>
