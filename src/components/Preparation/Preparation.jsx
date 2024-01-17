@@ -138,7 +138,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically1.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -152,7 +152,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically10.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -166,7 +166,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically14.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -180,7 +180,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically11.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -194,7 +194,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically12.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -208,7 +208,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically13.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -224,7 +224,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically2.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -238,7 +238,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically3.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -252,7 +252,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically4.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -266,7 +266,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically5.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -280,7 +280,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically15.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -294,7 +294,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically24.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -310,7 +310,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically25.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -324,7 +324,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically16.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -340,7 +340,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically17.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -354,7 +354,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically18.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -370,7 +370,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically19.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -384,7 +384,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically22.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -398,7 +398,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically23.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -412,7 +412,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically20.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -426,7 +426,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically21.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -440,7 +440,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically6.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -454,7 +454,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically7.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -468,7 +468,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically26.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -482,7 +482,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically8.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -496,7 +496,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically27.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -510,7 +510,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {typically9.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -527,7 +527,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer1.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
           <details>
@@ -553,7 +553,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer2.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
           <details>
@@ -579,7 +579,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer3.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -593,7 +593,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer10.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -607,7 +607,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer4.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -621,7 +621,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer5.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -635,7 +635,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer6.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -649,7 +649,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer7.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -663,7 +663,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer8.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -677,7 +677,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer11.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -691,7 +691,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer13.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -705,7 +705,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer12.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -719,7 +719,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer14.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
@@ -733,7 +733,7 @@ function Preparation() {
           </form>
           <div className="PostsComponents">
             {engineer9.map((post) => (
-              <Post post={post} key={post._id} />
+              <Post post={post} pass={pass} key={post._id} />
             ))}
           </div>
         </details>
